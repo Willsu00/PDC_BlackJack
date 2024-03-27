@@ -6,9 +6,7 @@ public class Dealer extends Player {
         //}
 
         if(HandValue.calculate(hand) <= 16) {
-            System.out.println("Dealer hits.");
             super.draw(deck);
-            System.out.println("Dealer's hand: " + hand);
         }
         else if(HandValue.calculate(hand) >= 17) {
             System.out.println("Dealer stands.");
