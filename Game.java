@@ -62,13 +62,15 @@ public class Game {
 
         int playerValue = HandValue.calculate(player.getHand());
 
-        
+
         while (HandValue.calculate(dealer.getHand()) <= 16) {
             dealer.draw(deck);
             dealerValue = HandValue.calculate(dealer.getHand());
             System.out.println("Dealer's hand: " + dealer.getHand());
             System.out.println("Dealer's hand value: " + dealerValue);
         }
+
+        dealerValue = HandValue.calculate(dealer.getHand());
 
         if (playerValue > 21) {
             System.out.println("Dealer wins.");
@@ -84,6 +86,8 @@ public class Game {
             System.out.println("It's a tie.");
         }
 
+        System.out.println(playerValue);
+        System.out.println(dealerValue);
         scanner.close();
     }
 }
