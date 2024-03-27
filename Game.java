@@ -13,9 +13,8 @@ public class Game {
         player.draw(deck);
         dealer.draw(deck);
         
-        System.out.println("Dealer has: "+dealer.getHand());
+        //System.out.println("Dealer's hand: "+dealer.getHand());
 
-        dealer.draw(deck);
         
         Scanner scanner = new Scanner(System.in);
         boolean gameEnd = false;
@@ -23,6 +22,9 @@ public class Game {
         while (!gameEnd) {
             System.out.println("Player's hand: " + player.getHand());
             //System.out.println("Dealer's hand: " + dealer.getHand());
+            int playerValue = HandValue.calculate(player.getHand());
+            System.out.println("Player's hand value: " + playerValue);
+
 
             System.out.println("Would you like to 'hit' or 'stand'?");
             String action = scanner.nextLine().toLowerCase();
@@ -36,6 +38,7 @@ public class Game {
                 }
             } else if (action.equals("stand")) {
                 dealer.draw(deck);
+                
                 gameEnd = true;
             } else {
                 System.out.println("Invalid action. Please enter 'hit' or 'stand'.");

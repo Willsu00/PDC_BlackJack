@@ -6,4 +6,5 @@ To Do:
 - 'A' over 21, then subtract 10
 - Game end when player over 21
 - show card count after draw
+- 'A' can choose between 1 or 11
   
