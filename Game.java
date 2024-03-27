@@ -19,13 +19,16 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         boolean gameEnd = false;
 
+        int dealerValue = HandValue.calculate(dealer.getHand());
+        System.out.println("Dealer's hand: " + dealer.getHand() + " and [One Facedown Card]");
+        System.out.println("Dealer's hand value: " + dealerValue);
+
+
+
         while (!gameEnd) {
             System.out.println("Player's hand: " + player.getHand());
-            System.out.println("Dealer's hand: " + dealer.getHand() + " and [One Facedown Card]");
             int playerValue = HandValue.calculate(player.getHand());
-            int dealerValue = HandValue.calculate(dealer.getHand());
             System.out.println("Player's hand value: " + playerValue);
-            System.out.println("Dealer's hand value: " + dealerValue);
             if (playerValue == 21) {
                 System.out.println("Winner winner chicken dinner! You got 21!");
                 gameEnd = true;
@@ -58,17 +61,13 @@ public class Game {
         }
 
         int playerValue = HandValue.calculate(player.getHand());
-        int dealerValue = HandValue.calculate(dealer.getHand());
 
-        System.out.println("Player's hand value: " + playerValue);
-        System.out.println("Dealer's hand: " + dealer.getHand());
-        System.out.println("Dealer's hand value: " + dealerValue);
-
-
+        
         while (HandValue.calculate(dealer.getHand()) <= 16) {
             dealer.draw(deck);
             dealerValue = HandValue.calculate(dealer.getHand());
-            System.out.println("Dealer's hand: " + dealer.getHand() + " " + dealerValue);
+            System.out.println("Dealer's hand: " + dealer.getHand());
+            System.out.println("Dealer's hand value: " + dealerValue);
         }
 
         if (playerValue > 21) {
