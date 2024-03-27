@@ -33,14 +33,11 @@ public class Game {
                 System.out.println("Winner winner chicken dinner! You got 21!");
                 gameEnd = true;
                 break;
-            }
-            else if(playerValue > 21) {
+            } else if(playerValue > 21) {
                 System.out.println("Bust!");
                 gameEnd = true;
                 break;
             }
-
-
 
             System.out.println("Would you like to 'hit' or 'stand'?");
             String action = scanner.nextLine().toLowerCase();
@@ -86,8 +83,8 @@ public class Game {
             System.out.println("It's a tie.");
         }
 
-        System.out.println(playerValue);
-        System.out.println(dealerValue);
+        System.out.println(playerValue + " Player's hand: " + player.getHand());
+        System.out.println(dealerValue + " Dealer's hand: " + dealer.getHand());
         scanner.close();
     }
 }
