@@ -2,13 +2,21 @@ import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
+
+        
+
         Deck deck = new Deck();
         Player player = new Player();
         Dealer dealer = new Dealer();
 
         player.draw(deck);
+        player.draw(deck);
         dealer.draw(deck);
+        
+        System.out.println("Dealer has: "+dealer.getHand());
 
+        dealer.draw(deck);
+        
         Scanner scanner = new Scanner(System.in);
         boolean gameEnd = false;
 
