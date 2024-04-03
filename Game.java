@@ -59,11 +59,6 @@ public class Game {
 
         int playerValue = HandValue.calculate(player.getHand());
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        }
-
         while (HandValue.calculate(dealer.getHand()) <= 16) {
             dealer.draw(deck);
             dealerValue = HandValue.calculate(dealer.getHand());
@@ -72,10 +67,6 @@ public class Game {
         }
 
         dealerValue = HandValue.calculate(dealer.getHand());
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        }
 
         if (playerValue > 21) {
             System.out.println("Dealer wins.");
