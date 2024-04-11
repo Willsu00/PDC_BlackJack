@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String playAgain;
+        
+        boolean playAgain = false;
     
         do {
             Deck deck = new Deck();
@@ -80,11 +81,26 @@ public class Game {
             System.out.println(playerValue + " Player's hand: " + player.getHand());
             System.out.println(dealerValue + " Dealer's hand: " + dealer.getHand());
     
+            
             System.out.println("Do you want to play again? (yes/no)");
-            playAgain = scanner.nextLine();
+            
+            while(true){
+                String playAgainInput = scanner.nextLine().toLowerCase();
+                    if(playAgainInput.trim().equals("yes")){
+                        playAgain = true;
+                        break;
+                    }else if(playAgainInput.trim().equals("no")){
+                        playAgain = false;
+                        break;
+                    }
+                    else{
+                        System.out.println("Invalid input. Please enter 'yes' or 'no'.");
+                    }
+                }
     
-        } while (playAgain.trim().equalsIgnoreCase("yes"));
+        } while (playAgain);
     
+        System.out.println("Game Ended");
         scanner.close();
     }
 }
