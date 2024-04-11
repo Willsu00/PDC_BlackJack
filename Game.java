@@ -5,6 +5,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         
         boolean playAgain = false;
+        int money = 100;
     
         do {
             Deck deck = new Deck();
@@ -66,16 +67,27 @@ public class Game {
     
             if (playerValue > 21) {
                 System.out.println("Dealer wins.");
+                money /= 2;
+                System.out.println("You now have $" + money);
             } else if (dealerValue > 21) {
                 System.out.println("Player wins.");
+                money *= 2;
+                System.out.println("You now have $" + money);
             } else if (playerValue > dealerValue) {
                 System.out.println("Player wins.");
+                money *= 2;
+                System.out.println("You now have $" + money);
             } else if (dealerValue >= playerValue && dealerValue > 21) {
                 System.out.println("Player Loses.");
+                money /= 2;
+                System.out.println("You now have $" + money);
             } else if(dealerValue > playerValue) {
                 System.out.println("Dealer wins.");
+                money /= 2;
+                System.out.println("You now have $" + money);
             }else {
                 System.out.println("It's a tie.");
+                System.out.println("You still have $" + money);
             }
     
             System.out.println(playerValue + " Player's hand: " + player.getHand());
