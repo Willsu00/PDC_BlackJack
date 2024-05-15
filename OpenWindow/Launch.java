@@ -15,17 +15,17 @@ import java.awt.event.ActionListener;
 
 public class Launch extends JFrame implements ActionListener {
 
-    private static final boolean True = false;
+    //private static final boolean True = false;
     JFrame frame = new JFrame();
     JPanel bpanel = new JPanel();
     JButton button = new JButton("Login");
+    JTextField textfield = new JTextField();
 
     Launch(){
 
         //button.setBounds(100, 160, 200, 40);
         //button.setFocusable(false);
         button.addActionListener(this);
-        JTextField textfield = new JTextField();
         textfield.setPreferredSize(new Dimension(120, 40));
 
         bpanel.add(button);
@@ -44,7 +44,9 @@ public class Launch extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+        if(e.getSource() == button){
+            System.out.println("Welcome " + textfield.getText());
+        }
     }
 
 }
