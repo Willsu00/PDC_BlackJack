@@ -43,10 +43,11 @@ public class Launch extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         if(e.getSource() == button){
             System.out.println("Welcome " + textfield.getText());
         }
     }
+
+
 
 }
